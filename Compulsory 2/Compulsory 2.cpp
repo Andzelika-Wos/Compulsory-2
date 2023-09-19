@@ -8,7 +8,7 @@ long int function();
 int main() 
 {
 	long int n;
-	unsigned long int result;
+	long int result;
 	bool isRunning = true;
 
 
