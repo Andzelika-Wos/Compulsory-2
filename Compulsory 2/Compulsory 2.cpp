@@ -176,6 +176,7 @@ long int function()
 	}
 	
 	cout << "Poly 2:" << secondPoly;
+	cout << "pls work";
 	cout << "\n";
 
 	return 0;
