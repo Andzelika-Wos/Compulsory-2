@@ -7,7 +7,13 @@
 using namespace std;
 
 long int factorial(long int n);
+int functionP1();
+int functionP2();
 
+/// <summary>
+/// main code that lets you choose between 4 options in a menu via a switch case, thereafter redirects you to the other functions
+/// </summary>
+/// <returns></returns>
 int main() 
 {
 	long int n;
@@ -48,36 +54,45 @@ int main()
 			}
 			break;
 
-			while (runningPoly = true)
-			{
+			
 		case 2:
-			result = polyFunction();
-			cout << "\n";
-			cout << "What do you want to do? (Type 1, 2, 3 or 4)\n";
-			cout << "1. Add the polynomials\n";
-			cout << "2. Substract the polynomials\n";
-			cout << "3. Multiply the polynomials\n";
-			cout << "4. Go back to menu\n";
-			cin >> polyChoice;
-			switch (polyChoice)
+		{
+			int firstPoly[4] = { 0,0,0,0 };
+			int secondPoly[4] = { 0,0,0,0 };
+			result = polyFunction(firstPoly, secondPoly);
+			while (runningPoly == true)
 			{
-			case 1:
-				
-				break;
+				cout << "\n";
+				cout << "What do you want to do? (Type 1, 2, 3 or 4)\n";
+				cout << "1. Add the polynomials\n";
+				cout << "2. Subtract the polynomials\n";
+				cout << "3. Multiply the polynomials\n";
+				cout << "4. Go back to menu\n";
+				cin >> polyChoice;
+				switch (polyChoice)
+				{
+				case 1:
+					cout << "\n";
+					cout << "Your two polys added equals: ";
+					addPoly(firstPoly, secondPoly);
+					break;
 
-			case 2:
-				break;
+				case 2:
+					cout << "\n";
+					cout << "Your two polys subtracted equals: ";
+					subtractPoly(firstPoly, secondPoly);
+					break;
 
-			case 3:
-				break;
+				case 3:
+					break;
 
-			case 4:
-				runningPoly = false;
-				break;
+				case 4:
+					runningPoly = false;
+					break;
+				}
 			}
 			break;
-			}
-
+		}
 
 		case 3:
 			result = calculator();
@@ -119,6 +134,3 @@ long int factorial(long int n)
 	}
 	return result;
 }
-
-
-

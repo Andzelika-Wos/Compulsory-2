@@ -4,6 +4,10 @@
 #include "Math.h"
 using namespace std;
 
+/// <summary>
+/// a simple calculator that lets the user input two numbers and choose an operator, also includes simple error control
+/// </summary>
+/// <returns></returns>
 int calculator() 
 {
 	char cal;
