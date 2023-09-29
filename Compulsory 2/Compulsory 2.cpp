@@ -9,6 +9,7 @@ using namespace std;
 long int factorial(long int n);
 int functionP1();
 int functionP2();
+int multiplyPoly();
 
 /// <summary>
 /// main code that lets you choose between 4 options in a menu via a switch case, thereafter redirects you to the other functions
@@ -72,23 +73,34 @@ int main()
 				switch (polyChoice)
 				{
 				case 1:
+				{
 					cout << "\n";
 					cout << "Your two polys added equals: ";
 					addPoly(firstPoly, secondPoly);
 					break;
+				}
 
 				case 2:
+				{
 					cout << "\n";
 					cout << "Your two polys subtracted equals: ";
 					subtractPoly(firstPoly, secondPoly);
 					break;
+				}
 
 				case 3:
-					break;
-
-				case 4:
+				{
+					cout << "coming soon...\n";
+					cout << "sorry for the inconvenience, you will be returned to the menu\n";
 					runningPoly = false;
 					break;
+				}
+
+				case 4:
+				{
+					runningPoly = false;
+					break;
+				}
 				}
 			}
 			break;

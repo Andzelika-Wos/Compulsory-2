@@ -7,6 +7,13 @@ using namespace std;
 int functionP1(int firstPoly[4]);
 int functionP2(int secondPoly[4]);
 
+
+/// <summary>
+/// main function for 3rd degree polynomials, which lets the user input numbers they want their polynomials to have and thereafter prints the input with exponents
+/// </summary>
+/// <param name="firstPoly"></param>
+/// <param name="secondPoly"></param>
+/// <returns></returns>
 int polyFunction(int firstPoly[4], int secondPoly[4])
 {
 
@@ -25,9 +32,9 @@ int polyFunction(int firstPoly[4], int secondPoly[4])
 	int j2 = 3;
 	for (int i = 0; i < 3; i++, j2--)
 	{
-		cout << firstPoly[i] << "x^" << j2 << " + ";
+		cout << "(" << firstPoly[i] << "x^" << j2 << ") + ";
 	}
-	cout << firstPoly[3];
+	cout << "(" << firstPoly[3] << ")";
 	cout << "\n";
 	cout << "\n";
 
@@ -44,9 +51,9 @@ int polyFunction(int firstPoly[4], int secondPoly[4])
 	int k2 = 3;
 	for (int i = 0; i < 3; i++, k2--)
 	{
-		cout << secondPoly[i] << "x^" << k2 << " + ";
+		cout << "(" << secondPoly[i] << "x^" << k2 << ") + ";
 	}
-	cout << secondPoly[3];
+	cout << "(" << secondPoly[3] << ")";
 	cout << "\n";
 	cout << "\n";
 
@@ -57,29 +64,39 @@ int polyFunction(int firstPoly[4], int secondPoly[4])
 
 };
 
+/// <summary>
+/// prints and defines the first polynomial with user input
+/// </summary>
+/// <param name="firstPoly"></param>
+/// <returns></returns>
 int functionP1(int firstPoly[4])
 {
 	cout << "Poly 1: ";
 	int j3 = 3;
 	for (int i = 0; i < 3; i++, j3--)
 	{
-		cout << firstPoly[i] << "x^" << j3 << " + ";
+		cout << "(" << firstPoly[i] << "x^" << j3 << ") + ";
 	}
-	cout << firstPoly[3];
+	cout << "(" << firstPoly[3] << ")";
 	cout << "\n";
 
 	return 0;
 }
 
+/// <summary>
+/// prints and defines the second polynomial with user input
+/// </summary>
+/// <param name="secondPoly"></param>
+/// <returns></returns>
 int functionP2(int secondPoly[4])
 {
 	cout << "Poly 2: ";
 	int k3 = 3;
 	for (int i = 0; i < 3; i++, k3--)
 	{
-		cout << secondPoly[i] << "x^" << k3 << " + ";
+		cout << "(" << secondPoly[i] << "x^" << k3 << ") + ";
 	}
-	cout << secondPoly[3];
+	cout <<  "(" << secondPoly[3] << ")";
 	cout << "\n";
 
 	return 0;
@@ -128,3 +145,38 @@ void subtractPoly(int firstPoly[4], int secondPoly[4])
 	cout << "(" << d << ")\n";
 
 }
+
+/// <summary>
+/// tried to understand how to do the multiplying of the polynomilas but eventualy I gave up
+/// </summary>
+/// <param name="firstPoly"></param>
+/// <param name="secondPoly"></param>
+/// <returns></returns>
+int *multiplyPoly(int firstPoly[4], int secondPoly[4])
+{
+	int *prod = new int[4 + 4 - 1];
+	for (int i = 0; i < 4 + 4 - 1; i++) 
+	{
+		prod[i] = 0;
+	}
+
+	for (int i = 0; i < 3; i++) 
+	{
+		for (int j = 0; j < 3; j++) 
+		{
+			prod[i + j] += firstPoly[i] * secondPoly[j];
+		}
+	}
+	return prod;
+}
+
+void printPoly(int functionP1(), int functionP2())
+{
+	functionP1() * functionP2();
+	
+}
+
+
+
+
+
